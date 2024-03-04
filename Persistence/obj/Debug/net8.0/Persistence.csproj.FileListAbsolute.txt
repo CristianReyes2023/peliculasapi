@@ -1,0 +1,15 @@
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\bin\Debug\net8.0\Persistence.deps.json
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\bin\Debug\net8.0\Persistence.dll
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\bin\Debug\net8.0\Persistence.pdb
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\bin\Debug\net8.0\Domain.dll
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\bin\Debug\net8.0\Domain.pdb
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\obj\Debug\net8.0\Persistence.csproj.AssemblyReference.cache
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\obj\Debug\net8.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\obj\Debug\net8.0\Persistence.AssemblyInfoInputs.cache
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\obj\Debug\net8.0\Persistence.AssemblyInfo.cs
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\obj\Debug\net8.0\Persistence.csproj.CoreCompileInputs.cache
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\obj\Debug\net8.0\Persistence.csproj.CopyComplete
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\obj\Debug\net8.0\Persistence.dll
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\obj\Debug\net8.0\refint\Persistence.dll
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\obj\Debug\net8.0\Persistence.pdb
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\obj\Debug\net8.0\ref\Persistence.dll
