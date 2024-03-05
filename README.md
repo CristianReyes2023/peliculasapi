@@ -1,11 +1,11 @@
 # Proyecto APIRESTful para CRUD de Películas
 
-Este proyecto consiste en la creación de un Api restful para gestionar peliculas usando el framework de .NET. La API permite realizar las siguientes operaciones Crear,Leer,Actualizar y Eliminar (Post,Get,Put y Delete)
+Este proyecto consiste en la creación de un Api restful para gestionar películas usando el framework de .NET. La API permite realizar las siguientes operaciones Crear,Leer,Actualizar y Eliminar (Post,Get,Put y Delete)
 
 ### Paso a Paso para uso el API en tu PC
 
 1. Creamos el database en MySql 
-    Usamos el archivo peliculaApi.sql, contiene el codigo para la creación del Database y de la tabla peliculas. Después insertamos los datos para posteriormente utilizarlo en el CRUD
+    Usamos el archivo peliculaApi.sql, contiene el código para la creación del Database y de la tabla peliculas. Después insertamos los datos para posteriormente utilizarlo en el CRUD
 
 2. Tienes que ir a API/API.csproj/appsettings.Development.json y modificar la        conexión a tu base de datos, verifica: server,user,password y database(si cambiaste el nombre)
     ```sql
@@ -23,7 +23,7 @@ Dado el caso quieres usar el Swagger para proba tu aplicación, debes utilizar e
 ```dotnet
  dotnet watch run --project ./API/
 ```
-Ahí podras encontrar los metodos como: GET,PUT,DELETE,GET{id}.
+Ahí podrás encontrar los métodos como: GET,PUT,DELETE,GET{id}.
 
 Si quieres usar otro protrama como ThunderClient o Insomnia rest, inicias el proyecto con el siguiente comando en la terminal
 
@@ -31,7 +31,7 @@ Si quieres usar otro protrama como ThunderClient o Insomnia rest, inicias el pro
  dotnet run --project ./API/
 ```
 
-## Explicación compomente del Proyecto
+## Explicación componentes del Proyecto
 
 ### PERSISTENCE
 
@@ -157,9 +157,9 @@ El contenedor de dependencias nos permite administrar las dependencias entre obj
 
 ## ENDPOINTS
 
-#### Metodo Get
+#### Método Get
 
-Este metodo nos permite hacer una busqueda de todos los elementos que se encuentren en la base de datos de la entidad que yo requiera.
+Este método nos permite hacer una búsqueda de todos los elementos que se encuentren en la base de datos de la entidad que yo requiera.
 
 ```c#
         [HttpGet]
@@ -183,11 +183,11 @@ Este metodo nos permite hacer una busqueda de todos los elementos que se encuent
   }
 ```
 
-#### Metodo Post
+#### Método Post
 
-Este metodo nos permite crear un nuevo elemento de la entidad seleccionada, por ejemplo tenemos la siguiente información en un archivo JSON
+Este método nos permite crear un nuevo elemento de la entidad seleccionada, por ejemplo tenemos la siguiente información en un archivo JSON.
 
-    Me entregaria los datos en el siguiente formato de tipo JSON
+Me entregaría los datos en el siguiente formato de tipo JSON
 ```json
 {
     "titulo": "El Caballero de la Noche",
@@ -223,7 +223,7 @@ Este metodo nos permite crear un nuevo elemento de la entidad seleccionada, por 
             return CreatedAtAction(nameof(Post), new { id = resultDto.Id }, resultDto);
         }
 ```
-Me solicitaria el titulo,director,año y genero de la pelicula, el Id me lo entregaría automaticamente ya que es autoincrementable.
+Me solicitaría el título, director, año y genero de la película, el Id me lo entregaría automáticamente ya que es auto incrementable.
 
 Endpoint: http://localhost:5201/api/peliculas
 
@@ -237,9 +237,9 @@ Endpoint: http://localhost:5201/api/peliculas
   }
 ```
 
-#### Metodo Put
+#### Método Put
 
-Este metodo nos permite hacer una actualización de algun elemento especificado con su respectivo Id. Ingresamos el Id a modificar y la información que queremos en el formato Json que se muestra acontinuación.
+Este método nos permite hacer una actualización de algún elemento especificado con su respectivo Id. Ingresamos el Id a modificar y la información que queremos en el formato Json que se muestra a continuación.
 
 ```json
     {
@@ -250,7 +250,7 @@ Este metodo nos permite hacer una actualización de algun elemento especificado 
     "genero": "Drama, Crimen"
   }
 ```
-Por ejemplo queremos cambiar el año(1998) ingresamos la información con la información presente en el json anterior.
+Por ejemplo queremos cambiar el año (1998) ingresamos la información con la información presente en el json anterior.
 
 ```c#
         [HttpPut("{id}")] 
@@ -282,7 +282,7 @@ Por ejemplo queremos cambiar el año(1998) ingresamos la información con la inf
 ```
     Enpoint: http://localhost:5201/api/peliculas/4
 
-    Me entregaria los datos en el siguiente formato de tipo JSON, en el cual se muestra el resultado final. En dado caso que no se ingresen los datos completos o haya algun error en el codigo se generara un error 400 Bad Request
+    Me entregan los datos en el siguiente formato de tipo JSON, en el cual se muestra el resultado final. En dado caso que no se ingresen los datos completos o haya algún error en el código se generara un error 400 Bad Request
 ```json
     {
     "id": 4,
@@ -293,9 +293,9 @@ Por ejemplo queremos cambiar el año(1998) ingresamos la información con la inf
   }
 ```
 
-#### Metodo Get{Id}
+#### Método Get{Id}
 
-Este metodo nos permite hacer una busqueda de algun elemento con su respectivo Id
+Este método nos permite hacer una búsqueda de algún elemento con su respectivo Id
 
 ```c#
         [HttpGet("{id}")]
@@ -313,7 +313,8 @@ Este metodo nos permite hacer una busqueda de algun elemento con su respectivo I
         }
 ```
     Enpoint: http://localhost:5201/api/peliculas/4
-    Me entregaria los datos en el siguiente formato de tipo JSON, con un respuesta 200
+
+Me entregaría los datos en el siguiente formato de tipo JSON, con un respuesta 20
 
 ```json
     {
@@ -324,9 +325,9 @@ Este metodo nos permite hacer una busqueda de algun elemento con su respectivo I
     "genero": "Drama, Crimen"
     }
 ```
-#### Metodo Delete{Id}
+#### Método Delete{Id}
 
-Este metodo nos permite eliminar un elemento haciendo su busqueda con el Id y posteriormente eliminando dicho elemento.
+Este método nos permite eliminar un elemento haciendo su búsqueda con el Id y posteriormente eliminando dicho elemento.
 
 ```c#
         [HttpDelete("{id}")]
