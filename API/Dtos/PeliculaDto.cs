@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace API.Dtos
 {
@@ -9,11 +11,18 @@ namespace API.Dtos
     {
         public int Id { get; set; }
         public string Titulo { get; set; } = null!;
-
         public string Director { get; set; } = null!;
-
         public string Anio { get; set; } = null!;
-
         public string Genero { get; set; } = null!;
+
+        public PeliculaDto() { }
+
+        public PeliculaDto(string titulo, string director, string anio, string genero)
+        {
+            Titulo = titulo;
+            Director = director;
+            Anio = anio;
+            Genero = genero;
+        }
     }
 }

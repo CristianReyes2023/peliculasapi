@@ -13,6 +13,7 @@ namespace API.Profiles
         public MappingProfiles()
         {
             CreateMap<Pelicula,PeliculaDto>().ReverseMap();
+            CreateMap<Pelicula,PeliculaDtoPost>().ReverseMap();
         }
     }
 }

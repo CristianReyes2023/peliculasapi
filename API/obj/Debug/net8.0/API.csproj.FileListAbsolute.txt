@@ -148,3 +148,5 @@ F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\pe
 F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\API\obj\Debug\net8.0\API.pdb
 F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\API\obj\Debug\net8.0\ref\API.dll
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\API\obj\Debug\net8.0\API.sourcelink.json
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Annotations.dll

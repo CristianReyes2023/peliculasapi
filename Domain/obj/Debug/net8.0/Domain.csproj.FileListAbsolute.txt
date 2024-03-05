@@ -10,3 +10,4 @@ F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\pe
 F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Domain\obj\Debug\net8.0\refint\Domain.dll
 F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Domain\obj\Debug\net8.0\Domain.pdb
 F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Domain\obj\Debug\net8.0\ref\Domain.dll
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Domain\obj\Debug\net8.0\Domain.sourcelink.json

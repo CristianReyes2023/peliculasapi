@@ -13,3 +13,4 @@ F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\pe
 F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\obj\Debug\net8.0\refint\Persistence.dll
 F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\obj\Debug\net8.0\Persistence.pdb
 F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\obj\Debug\net8.0\ref\Persistence.dll
+F:\Cristian2\Programacion\CAMPUSLAND\PruebasTecnicas\DataGlobal\PruebaTecnica\peliculasapi\Persistence\obj\Debug\net8.0\Persistence.sourcelink.json
