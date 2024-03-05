@@ -63,7 +63,7 @@ namespace API.Controller
             return _mapper.Map<PeliculaDto>(result);
         }
 
-        [HttpPut("{id}")] // 2611
+        [HttpPut("{id}")] 
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -71,6 +71,7 @@ namespace API.Controller
         {
 
             var exists = await _unitOfWork.Peliculas.GetByIdAsync(id);
+            
             if (exists == null)
             {
                 return NotFound();
@@ -83,11 +84,8 @@ namespace API.Controller
             {
                 return BadRequest();
             }
-            // Update the properties of the existing entity with values from resultDto
             _mapper.Map(resultDto, exists);
-            // The context is already tracking result, so no need to attach it
             await _unitOfWork.SaveAsync();
-            // Return the updated entity
             return _mapper.Map<PeliculaDto>(exists);
         }
 
