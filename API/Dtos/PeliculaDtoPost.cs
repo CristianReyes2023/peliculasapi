@@ -8,11 +8,11 @@ using Domain.Entities;
 
 namespace API.Dtos
 {
-public class PeliculaDtoPost
-{
-    public string Titulo { get; set; } = null!;
-    public string Director { get; set; } = null!;
-    public string Anio { get; set; } = null!;
-    public string Genero { get; set; } = null!;
-}
+    public class PeliculaDtoPost
+    {
+        public string Titulo { get; set; } = null!;
+        public string Director { get; set; } = null!;
+        public string Anio { get; set; } = null!;
+        public string Genero { get; set; } = null!;
+    }
 }

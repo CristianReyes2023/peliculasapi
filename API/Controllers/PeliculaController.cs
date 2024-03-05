@@ -22,11 +22,6 @@ namespace API.Controller
             _mapper = mapper;
         }
 
-        /// <summary>
-        /// "Envia la información deseada"
-        /// </summary>
-        /// <param name="inputDto">Holii</param>
-        /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -40,19 +35,19 @@ namespace API.Controller
                 Anio = inputDto.Anio,
                 Genero = inputDto.Genero
             };
-            if (pelicula.Id == 0)
-            {
-                return BadRequest("");
-            }
 
             _unitOfWork.Peliculas.Add(pelicula);
             await _unitOfWork.SaveAsync();
 
-
+            if (pelicula.Id == 0)
+            {
+                return BadRequest();
+            }
 
             var resultDto = _mapper.Map<PeliculaDto>(pelicula);
             return CreatedAtAction(nameof(Post), new { id = resultDto.Id }, resultDto);
         }
+
 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -74,7 +69,7 @@ namespace API.Controller
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<PeliculaDto>> Put(int id, [FromBody] PeliculaDto resultDto)
         {
-            
+
             var exists = await _unitOfWork.Peliculas.GetByIdAsync(id);
             if (exists == null)
             {

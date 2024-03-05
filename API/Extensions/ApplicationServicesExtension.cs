@@ -23,7 +23,7 @@ namespace API.Extensions
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
-        public static void ConfigureRateLimiting(this IServiceCollection services) // 2611
+        public static void ConfigureRateLimiting(this IServiceCollection services) 
         {
             services.AddMemoryCache();
             services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
@@ -40,7 +40,7 @@ namespace API.Extensions
                     {
                         Endpoint = "*",  // Si quiere usar todos ponga *
                         Period = "10s", // Periodo de tiempo para hacer peticiones
-                        Limit = 2         // Numero de peticiones durante el periodo de tiempo
+                        Limit = 5         // Numero de peticiones durante el periodo de tiempo
                     }
                 };
             });
@@ -48,3 +48,4 @@ namespace API.Extensions
     }
     
 }
+
