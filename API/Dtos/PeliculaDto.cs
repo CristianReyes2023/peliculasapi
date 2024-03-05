@@ -14,15 +14,5 @@ namespace API.Dtos
         public string Director { get; set; } = null!;
         public string Anio { get; set; } = null!;
         public string Genero { get; set; } = null!;
-
-        public PeliculaDto() { }
-
-        public PeliculaDto(string titulo, string director, string anio, string genero)
-        {
-            Titulo = titulo;
-            Director = director;
-            Anio = anio;
-            Genero = genero;
-        }
     }
 }
