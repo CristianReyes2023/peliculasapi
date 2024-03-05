@@ -31,6 +31,129 @@ Si quieres usar otro protrama como ThunderClient o Insomnia rest, inicias el pro
  dotnet run --project ./API/
 ```
 
+## Explicación compomente del Proyecto
+
+### PERSISTENCE
+
+En la carpeta configuración podemos encontrar la carpeta Data, el cual se compone de Configuration, Migrations y el archivo de contexto.
+
+#### Configuration:
+ Esta compuesto de la configuración de la entidades que creamos para cada proyecto el nos permite modificar las características de la tabla que se Va a crear.
+
+```c#
+    public class PeliculaConfiguration : IEntityTypeConfiguration<Pelicula>
+    {
+        public void Configure(EntityTypeBuilder<Pelicula> builder)
+        {
+            builder.HasKey(e => e.Id).HasName("PRIMARY");
+
+            builder.ToTable("peliculas");
+
+            builder.Property(e => e.Anio)
+                .HasMaxLength(50)
+                .HasColumnName("anio");
+            builder.Property(e => e.Director)
+                .HasMaxLength(50)
+                .HasColumnName("director");
+            builder.Property(e => e.Genero)
+                .HasMaxLength(50)
+                .HasColumnName("genero");
+            builder.Property(e => e.Titulo)
+                .HasMaxLength(50)
+                .HasColumnName("titulo");
+        }
+    }
+```
+#### Migration:
+Podemos encontrar las migraciones que lleva el proyecto, las migraciones son una parte esencial de los sistemas de control de versiones y permiten mantener un historial de los cambios realizados en la estructura de la base de datos a lo largo del tiempo.
+
+#### Archivo de contexto
+
+La clase contexto es la encargada de establecer negociaciones entre nuestra webapi y nuestra base de datos.
+
+### DOMAIN
+
+#### Entities
+
+Son clases que representan el modelado de los datos, cada propiedad es una entidad y va a representar una columna de la tabla final
+
+#### Interfaces 
+
+Cada entidad tiene su propia interfaz, y así ellas heredan de IGenericRepository el cual permite tener acceso a los metodos que el contiene
+ ```c#
+    public interface IGenericRepository<T> where T : BaseEntity
+    {
+        Task<T> GetByIdAsync(int Id);
+        Task<IEnumerable<T>> GetAllAsync();
+        IEnumerable<T> Find(Expression<Func<T, bool>> expression);
+        // Task<(int totalRegistros, IEnumerable<T> registros)> GetAllAsync(int pageIndex, int pageSize, string search);
+        void Add(T entity);
+        void AddRange(IEnumerable<T> entities);
+        void Remove(T entity);
+        void RemoveRange(IEnumerable<T> entities);
+        void Update(T entity);
+    }
+```
+Las interfaces al heredar IGenericRepository, me va a permitir más adelante hace uso de los métodos que ella contiene.
+
+IUnitOfWork: Esta clase nos permite poder agrupar todos los repositorios y interfaces en una sola clase. Esto con el objetivo de optimizar el uso de recursos de memoria específicamente.
+Por medio de estas unidades de trabajo nosotros podemos ir instanciando aquellas clases que necesitamos y no usar las que no.
+
+### APPLICATION
+
+#### Repositories
+
+En los repositorios ya definimos la funcionalidad que va a tener cada método que se creó en las interfaces, para nuestro caso tenemos el GenericRepository que nos define los métodos pertenecientes al IGenericRepository.
+
+```c#
+    public virtual async Task<IEnumerable<T>> GetAllAsync()
+    {
+        return await _context.Set<T>().ToListAsync();
+        // return (IEnumerable<T>) await _context.Entities.FromSqlRaw("SELECT * FROM entity").ToListAsync();
+    }
+
+    public virtual async Task<T> GetByIdAsync(int id)
+    {
+        return await _context.Set<T>().FindAsync(id);
+    }
+```
+Si queremos hacer un método específico para una entidad también podemos hacer el mismo proceso para cada uno de las entidades que desee.
+
+#### UnitOfWork 
+
+Las unidades de trabajo son componentes que utilizamos para agrupar y coordinar operaciones relacionadas con la persistencia de datos.
+
+
+### API
+Para nuestro caso lo lo llamamos API pero puedes darle un nombre más personalizado al momento de crearlo.
+
+#### Controller 
+
+Son componentes cruciales que manejan las solicitudes HTTP, procesan datos, generan respuestas y facilitan la creación de una Api web que pueda interactuar con los clientes. Se tiene los métodos GET,PUT, DELETE Y POST.
+
+Cada una de las entidades va a tener sus respectivos controladores y consultas personalizadas en dado caso de ser necesario.
+
+#### Dtos
+
+Son objetos de transformación de datos donde yo puedo personalizar y de como necesito que el usuario vea la información.
+Con los Dto también buscamos evitar que salgan las definicién de relación entre otras entidades.
+
+#### Extensions
+
+Acá tenemos un archivo que nos permite agregar diferentes implementaciones, como por ejemplo RateLimit que me permite restringir la cantidad de peticiones que llegue a nuestro WebApi y así evitar que colapse. 
+
+
+#### Helpers
+
+Son clases que nos van a permitir una estructura adecuada en nuestros objetos. Por ejemplo podemos tener un helper para paginar cuando son demasiados datos.
+
+#### Profiles
+
+Acá le decimos al automapper que coja una clase A (entidad) y hacerle un mapper con la clase DTO que tengo definida para esa entidad.
+
+#### Program.cs 
+
+El contenedor de dependencias nos permite administrar las dependencias entre objetos. En lugar de que un objeto cree y mantenga sus propias dependencias, se delega la responsabilidad de proporcionar las dependencias externamente. 
 
 ## ENDPOINTS
 
@@ -123,7 +246,7 @@ Este metodo nos permite hacer una actualización de algun elemento especificado 
     "id": 4,
     "titulo": "Tiempos Violentos",
     "director": "Quentin Tarantino",
-    "anio": "1998",
+    "anio": "1994",
     "genero": "Drama, Crimen"
   }
 ```

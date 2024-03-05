@@ -69,7 +69,6 @@ namespace API.Controller
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<PeliculaDto>> Put(int id, [FromBody] PeliculaDto resultDto)
         {
-
             var exists = await _unitOfWork.Peliculas.GetByIdAsync(id);
             
             if (exists == null)
